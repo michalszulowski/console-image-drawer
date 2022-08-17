@@ -24,7 +24,7 @@ MLINES=$(( $MLINES - 1 )) # -1 due to input line
 IMG_W=$MCOLS
 IMG_H=$MLINES
 
-COMP_IMG="compimage.png"
+COMP_IMG=$(mktemp)
 COMPRESS_COMMAND="convert $IMG -resize "$IMG_W"x"$IMG_H"\! $COMP_IMG"
 eval $COMPRESS_COMMAND 
 
@@ -113,6 +113,5 @@ print_tiles () {
 	done
 }
 
-#list_pixels_hex
 load_pixels
 print_tiles
