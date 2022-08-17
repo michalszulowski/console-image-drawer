@@ -3,9 +3,9 @@
 while getopts "hvp:" option; do
 	case ${option} in 
 		h)
-			echo "podaj zdjęcie do wyświetlenia jako argument skryptu"; exit 0 ;;
+			echo "Give image to draw as first argument of the script"; exit 0 ;;
 		v)
-			echo "wersja pierwsza i ostatnia" ; exit 0 ;;
+			echo "1.0" ; exit 0 ;;
 	esac
 done
 
@@ -14,7 +14,7 @@ START=$(date +%s)
 IMG=$1
 
 if [[ ! -f $IMG ]] ; then
-	echo "Podany plik nie istnieje"
+	echo "Given file does not exist"
 	exit 0
 fi
 
@@ -62,7 +62,7 @@ load_pixels () {
 			PROGRESS=$(( 100 * $ITER / $TOTAL_TILES ))
 			CURR_TIME=$(date +%s)
 			TIME=$(( $CURR_TIME - $START  ))
-			echo "Postęp: $PROGRESS%, czas: $TIME s."
+			echo "Progress: $PROGRESS%, total time: $TIME s."
 		fi
     		
 		read X Y HEX <<< $LINE
