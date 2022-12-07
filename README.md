@@ -9,6 +9,6 @@ A simple bash script drawing images in linux terminal.
 Just run the script and pass image path like:
 >./script.sh cow.png
 
-## Reqirements
+## Requirements
 - Imagemagick
 - Grep
